@@ -1,0 +1,12 @@
+# ローカル専用（公開しない）
+CLAUDE.md
+README.md
+docs/
+assets/images/tarot/*.[pP][nN][gG]
+assets/images/logo/jinseijikken-logo.png
+
+# OS・エディタが生成するファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+.claude/
