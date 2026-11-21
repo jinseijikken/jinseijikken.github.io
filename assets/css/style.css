@@ -325,8 +325,172 @@ a:focus-visible { outline: 2px solid #777; outline-offset: 5px; }
 .footer-end { display: flex; align-items: center; gap: 20px; }
 .footer-end .sns-icon { width: 16px; height: 16px; }
 
+/* =========================================================
+   作品ページ：しろてんタロット（shiroten/index.html）
+   カンプ外のページ。トップと同じ配色・書体・部品で構成
+   ========================================================= */
+.subhero {
+  color: var(--white);
+  background:
+    url("../images/bg/stars-b.png") center 40px / max(95%, 1100px) auto no-repeat,
+    var(--night);
+}
+.subhero a:focus-visible { outline-color: var(--white); }
+.subhero-body { padding: 72px 0 96px; }
+.subhero-num {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  font-family: var(--roman);
+  font-size: 17px;
+  letter-spacing: .04em;
+  color: var(--gold);
+}
+.subhero-num .status { border-color: rgba(255, 255, 255, .6); color: rgba(255, 255, 255, .85); }
+.subhero-title {
+  margin: 22px 0 0;
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .14em;
+}
+.subhero-lead {
+  margin: 18px 0 0;
+  font-family: var(--serif);
+  font-size: 18px;
+  letter-spacing: .1em;
+  opacity: .9;
+}
+
+.shiroten-gallery { padding: 80px 0 0; }
+.shiroten-gallery .tarot-gallery {
+  grid-template-columns: repeat(3, minmax(0, 220px));
+  justify-content: center;
+  gap: 28px;
+  margin: 0 auto;
+}
+
+.story { padding: 96px 0 110px; }
+.story .eyebrow,
+.beings .eyebrow {
+  margin: 0 0 28px;
+  font-family: var(--roman);
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: .2em;
+  color: var(--muted);
+}
+.story-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  gap: 64px;
+  align-items: center;
+  max-width: 900px;
+  margin-top: 52px;
+}
+.story-text { max-width: 720px; }
+.story-figure { margin: 0; text-align: center; }
+.story-figure img { display: block; width: 100%; height: auto; }
+.story-figure figcaption {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 4px 18px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  font-family: var(--serif);
+  font-size: 14px;
+  letter-spacing: .12em;
+  color: var(--ink);
+}
+.story-text p {
+  margin: 0 0 20px;
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 2.1;
+  letter-spacing: .08em;
+  color: #3f4356;
+  /* 文節の切れ目で折り返し、行末に1〜2文字だけ残らないようにする（対応ブラウザのみ。非対応でも通常の折り返し） */
+  word-break: auto-phrase;
+  text-wrap: pretty;
+}
+.story-text .story-end { margin: 40px 0 0; color: var(--ink); }
+.making { padding-bottom: 40px; }
+.making-text { margin-top: 52px; }
+
+.beings {
+  padding: 100px 0 110px;
+  color: var(--white);
+  background: url("../images/bg/stars.png") left top / 1440px auto repeat, var(--contents-bg);
+}
+.beings .eyebrow { color: var(--gold); }
+.being-list,
+.zodiac-list { margin: 0; padding: 0; list-style: none; }
+.being-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 200px));
+  gap: 32px;
+  margin-top: 48px;
+}
+.being { text-align: center; }
+.being-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .05);
+}
+/* 画像が無いときに見える✦（画像があれば上に重なって隠れる） */
+.being-icon::before { content: "✦"; font-size: 30px; color: var(--gold); opacity: .7; }
+.being-icon img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.being-name {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 6px 20px;
+  border: 1px solid rgba(199, 170, 107, .7);
+  border-radius: 999px;
+  font-family: var(--serif);
+  font-size: 16px;
+  letter-spacing: .1em;
+}
+.beings-sub {
+  margin: 72px 0 0;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+.zodiac-list { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 32px 16px; margin-top: 36px; }
+.zodiac { text-align: center; }
+.zodiac .being-icon { width: 112px; height: 112px; }
+.zodiac .being-icon::before { font-size: 22px; }
+.zodiac-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-family: var(--serif);
+  font-size: 15px;
+  letter-spacing: .08em;
+}
+.zodiac-mark { font-size: 17px; line-height: 1; color: var(--gold); }
+
+.back-top { padding: 64px 0 80px; }
+.back-top a { font-family: var(--serif); font-size: 15px; letter-spacing: .06em; text-underline-offset: 6px; }
+.back-top a:hover { opacity: .65; }
+
 /* ---------- Tablet ---------- */
 @media (max-width: 1000px) {
+  .subhero-title { font-size: 36px; }
+  .story-body { grid-template-columns: minmax(0, 1fr) 160px; gap: 40px; }
+  .zodiac-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .hero-body { padding: 110px 0 100px; }
   .hero-logo { width: 340px; margin-bottom: 52px; }
   .mission { font-size: 28px; }
@@ -380,7 +544,36 @@ a:focus-visible { outline: 2px solid #777; outline-offset: 5px; }
   .closing { padding: 36px 0 96px; }
   .closing p { margin-top: 28px; font-size: 16px; }
   .footer { padding: 26px 0 36px; }
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 12px; }}
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 12px; }
+  /* 作品ページ：しろてんタロット */
+  .subhero { background-size: 760px auto, auto; background-position: center 30px, 0 0; }
+  .subhero-body { padding: 48px 0 64px; }
+  .subhero-num { font-size: 15px; gap: 14px; }
+  .subhero-title { font-size: 28px; letter-spacing: .1em; }
+  .subhero-lead { font-size: 15px; letter-spacing: .06em; }
+  .shiroten-gallery { padding-top: 48px; }
+  .shiroten-gallery .tarot-gallery { gap: 10px; }
+  .story { padding: 72px 0 80px; }
+  .story-body { grid-template-columns: 1fr; gap: 40px; margin-top: 40px; }
+  .story-figure { width: 140px; margin: 0 auto; }
+  .story-figure figcaption { font-size: 13px; }
+  .story-text p { font-size: 15px; line-height: 2; letter-spacing: .04em; margin-bottom: 16px; }
+  .story-text .story-end { margin-top: 32px; }
+  .making { padding-bottom: 24px; }
+  .making-text { margin-top: 40px; }
+  .beings { padding: 72px 0 80px; background-size: 960px auto, auto; }
+  .being-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 32px; }
+  .being-icon { width: 92px; height: 92px; }
+  .being-icon::before { font-size: 22px; }
+  .being-name { margin-top: 10px; padding: 0; border: 0; font-size: 13px; letter-spacing: .04em; }
+  .beings-sub { margin-top: 52px; font-size: 18px; }
+  .zodiac-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 12px; margin-top: 28px; }
+  .zodiac .being-icon { width: 84px; height: 84px; }
+  .zodiac .being-icon::before { font-size: 18px; }
+  .zodiac-name { margin-top: 8px; font-size: 13px; letter-spacing: .04em; gap: 4px; }
+  .zodiac-mark { font-size: 14px; }
+  .back-top { padding: 48px 0 64px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
