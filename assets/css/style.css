@@ -71,13 +71,25 @@ a:focus-visible { outline: 2px solid #777; outline-offset: 5px; }
 }
 .brand { display: block; line-height: 0; }
 .brand img { width: 78px; }
-.navlinks { display: flex; gap: 36px; }
+.navlinks { display: flex; align-items: center; gap: 36px; }
 .navlinks a {
   font-size: 15px;
   letter-spacing: .02em;
   text-decoration: none;
 }
 .navlinks a:hover { text-decoration: underline; text-underline-offset: 6px; }
+
+/* Instagram：黒のグリフSVGをマスクにして文字色（currentColor）で塗る。未配置時は何も表示されない */
+.sns { display: inline-flex; align-items: center; line-height: 0; }
+.sns:hover { opacity: .65; }
+.sns-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+  -webkit-mask: url("../images/Instagram_Glyph_Black.svg") center / contain no-repeat;
+  mask: url("../images/Instagram_Glyph_Black.svg") center / contain no-repeat;
+}
 
 .hero-body { text-align: center; padding: 142px 0 126px; }
 .hero-logo {
@@ -274,6 +286,8 @@ a:focus-visible { outline: 2px solid #777; outline-offset: 5px; }
   font-size: inherit;
   letter-spacing: .1em;
 }
+.footer-end { display: flex; align-items: center; gap: 20px; }
+.footer-end .sns-icon { width: 16px; height: 16px; }
 
 /* ---------- Tablet ---------- */
 @media (max-width: 1000px) {
@@ -326,8 +340,7 @@ a:focus-visible { outline: 2px solid #777; outline-offset: 5px; }
   .closing { padding: 36px 0 96px; }
   .closing p { margin-top: 28px; font-size: 16px; }
   .footer { padding: 26px 0 36px; }
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 12px; }
-}
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 12px; }}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
