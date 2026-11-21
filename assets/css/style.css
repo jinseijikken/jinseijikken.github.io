@@ -421,8 +421,10 @@ a:focus-visible { outline: 2px solid #777; outline-offset: 5px; }
   line-height: 2.1;
   letter-spacing: .08em;
   color: #3f4356;
-  /* 文節の切れ目で折り返し、行末に1〜2文字だけ残らないようにする（対応ブラウザのみ。非対応でも通常の折り返し） */
-  word-break: auto-phrase;
+  /* 改行の位置：HTMLに入れた <wbr>（改行してよい位置）と「、」「。」でだけ改行する（keep-all）。
+     どのブラウザでも同じ。入りきらない場合だけ途中で折り返す。文章を足すときは <wbr> も入れること */
+  word-break: keep-all;
+  overflow-wrap: anywhere;
   text-wrap: pretty;
 }
 .story-text .story-end { margin: 40px 0 0; color: var(--ink); }
