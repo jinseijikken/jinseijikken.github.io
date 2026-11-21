@@ -574,7 +574,8 @@ a:focus-visible { outline: 2px solid #777; outline-offset: 5px; }
   .story-body { grid-template-columns: 1fr; gap: 40px; margin-top: 40px; }
   .story-figure { width: 140px; margin: 0 auto; }
   .story-figure figcaption { font-size: 13px; }
-  .story-text p { font-size: 15px; line-height: 2; letter-spacing: .04em; margin-bottom: 16px; }
+  /* スマホは画面が狭く、文節で区切ると行の長さがばらばらになるため、普通に行いっぱいまで詰めて改行する */
+  .story-text p { font-size: 15px; line-height: 2; letter-spacing: .04em; margin-bottom: 16px; word-break: normal; overflow-wrap: normal; }
   .story-text .story-end { margin-top: 32px; }
   .making { padding-bottom: 24px; }
   .making-text { margin-top: 40px; }
