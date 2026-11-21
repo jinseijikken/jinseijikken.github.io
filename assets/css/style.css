@@ -142,6 +142,7 @@ a:focus-visible { outline: 2px solid #777; outline-offset: 5px; }
   color: var(--body);
 }
 .about-text p:last-child { margin-bottom: 0; }
+.about-text p { text-wrap: pretty; } /* 最後の行に1〜2文字だけ残らないように（対応ブラウザのみ） */
 .about-text .lead {
   margin-bottom: 52px;
   font-family: var(--serif);
