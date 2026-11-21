@@ -330,11 +330,21 @@ a:focus-visible { outline: 2px solid #777; outline-offset: 5px; }
    カンプ外のページ。トップと同じ配色・書体・部品で構成
    ========================================================= */
 .subhero {
+  position: relative;
   color: var(--white);
-  background:
-    url("../images/bg/stars-b.png") center 40px / max(95%, 1100px) auto no-repeat,
-    var(--night);
+  background: var(--night);
 }
+/* 星は文字のない右側だけに見せる（左の文字に重ならないよう、左から右へ徐々に表示） */
+.subhero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/bg/stars-b.png") center 40px / max(95%, 1100px) auto no-repeat;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, transparent 50%, #000 72%);
+  mask-image: linear-gradient(to right, transparent 0, transparent 50%, #000 72%);
+  pointer-events: none;
+}
+.subhero > * { position: relative; z-index: 1; }
 .subhero a:focus-visible { outline-color: var(--white); }
 .subhero-body { padding: 72px 0 96px; }
 .subhero-num {
@@ -546,7 +556,12 @@ a:focus-visible { outline: 2px solid #777; outline-offset: 5px; }
   .footer { padding: 26px 0 36px; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 12px; }
   /* 作品ページ：しろてんタロット */
-  .subhero { background-size: 760px auto, auto; background-position: center 30px, 0 0; }
+  .subhero::before {
+    background-size: 760px auto;
+    background-position: center 30px;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, transparent 62%, #000 88%);
+    mask-image: linear-gradient(to right, transparent 0, transparent 62%, #000 88%);
+  }
   .subhero-body { padding: 48px 0 64px; }
   .subhero-num { font-size: 15px; gap: 14px; }
   .subhero-title { font-size: 28px; letter-spacing: .1em; }
